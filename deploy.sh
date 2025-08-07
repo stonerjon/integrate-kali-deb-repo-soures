@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #
-# integrate-kali-repo.sh
-#
 # Safely integrate Kali Rolling repositories into a Debian system
 # with proper pinning to avoid accidental package upgrades.
 # Linted for ShellCheck and with robust error handling.
@@ -51,8 +49,7 @@ require_root() {
 backup_configs() {
   info "Backing up existing APT configs to $BACKUP_DIR"
   mkdir -p "$BACKUP_DIR"
-  cp /etc/apt/sources.list* "$BACKUP_DIR" 2>/dev/null || true \
-  
+  cp /etc/apt/sources.list* "$BACKUP_DIR" 2>/dev/null || true
   cp /etc/apt/preferences.d/* "$BACKUP_DIR" 2>/dev/null || true
 }
 
